@@ -17,7 +17,14 @@ export default class BotHelper {
     setup() {
         this.botInstance.setGreetingText(Strings.greeting);
         this.botInstance.setGetStartedButton(Constants.PAYLOAD_GET_STARTED);
-        // TODO: Add persistent menu options
+        let menuButtons = [
+            {
+                type: 'postback',
+                title: Strings.inspire,
+                payload: Constants.PAYLOAD_INSPIRE
+            }
+        ];
+        this.botInstance.setPersistentMenu(menuButtons);
     }
 
     // Sends standard quick replies with specified message

@@ -18,6 +18,8 @@ let app = express();
 botInstance.on('postback', (userId: string, payload: string) => {
     if (payload == Constants.PAYLOAD_GET_STARTED) {
         botHelper.handleGetStarted(userId);
+    } else if (payload == Constants.PAYLOAD_INSPIRE) {
+        botHelper.sendInspirationalMessage(userId);
     }
 });
 
